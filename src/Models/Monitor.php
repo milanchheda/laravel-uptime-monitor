@@ -24,6 +24,7 @@ class Monitor extends Model
         'uptime_status_last_change_date',
         'uptime_check_failed_event_fired_on_date',
         'certificate_expiration_date',
+        'certificate_last_check_date'
     ];
 
     protected $casts = [
