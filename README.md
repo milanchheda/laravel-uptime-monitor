@@ -1,3 +1,4 @@
+
 # A powerful, easy to configure uptime monitor
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-uptime-monitor.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-uptime-monitor)
