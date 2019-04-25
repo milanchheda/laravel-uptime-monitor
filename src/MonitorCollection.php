@@ -56,7 +56,10 @@ class MonitorCollection extends Collection
                     'headers' => $this->promiseHeaders($monitor),
                     'body' => $monitor->uptime_check_payload,
                     'on_stats' => function (TransferStats $stats) use ($monitor) {
-                        $monitor->uptime_check_response_time = $stats->getTransferTime();
+                        $monitor->uptime_check_total_time = $stats->getTransferTime();
+                        $monitor->uptime_check_namelookup_time = $stats->getHandlerStat('namelookup_time');
+                        $monitor->uptime_check_connect_time = $stats->getHandlerStat('connect_time');
+                        $monitor->uptime_check_primary_ip = $stats->getHandlerStat('primary_ip');
                     },
                 ])
             );
