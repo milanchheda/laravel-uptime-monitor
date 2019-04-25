@@ -3,6 +3,7 @@
 namespace Spatie\UptimeMonitor\Models\Traits;
 
 use Exception;
+use Carbon\Carbon;
 use Spatie\UptimeMonitor\Models\Monitor;
 use Spatie\SslCertificate\SslCertificate;
 use Spatie\UptimeMonitor\Events\CertificateCheckFailed;
