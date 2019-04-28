@@ -16,7 +16,7 @@ class CreateMonitorsTable extends Migration
     {
         Schema::create('monitors', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('url')->unique();
+            $table->string('url');
 
             $table->boolean('uptime_check_enabled')->default(true);
             $table->string('look_for_string')->default('');
@@ -24,12 +24,12 @@ class CreateMonitorsTable extends Migration
             $table->string('uptime_status')->default(UptimeStatus::NOT_YET_CHECKED);
             $table->text('uptime_check_failure_reason')->nullable();
             $table->integer('uptime_check_times_failed_in_a_row')->default(0);
-            
+
             $table->float('uptime_check_total_time', 6, 3)->nullable();
             $table->float('uptime_check_namelookup_time', 6, 3)->nullable();
             $table->float('uptime_check_connect_time', 6, 3)->nullable();
             $table->string('uptime_check_primary_ip')->nullable();
-            
+
             $table->timestamp('uptime_status_last_change_date')->nullable();
             $table->timestamp('uptime_last_check_date')->nullable();
             $table->timestamp('uptime_check_failed_event_fired_on_date')->nullable();
