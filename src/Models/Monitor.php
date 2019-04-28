@@ -118,6 +118,9 @@ class Monitor extends Model
 
     protected static function alreadyExists(self $monitor): bool
     {
+        // Avoiding already existing check and two users can monitor the website.
+        return false;
+        /*
         $query = static::where('url', $monitor->url);
 
         if ($monitor->exists) {
@@ -125,5 +128,6 @@ class Monitor extends Model
         }
 
         return (bool) $query->first();
+        */
     }
 }
